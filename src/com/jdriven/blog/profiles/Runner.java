@@ -8,7 +8,7 @@ public class Runner {
 		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
 		//Setting active profile
 		ctx.getEnvironment().setActiveProfiles("ldap");
-		ctx.load("classpath:META-INF/spring/app-context.xml");
+		ctx.load("classpath:app-context.xml");
 		ctx.refresh();
 		ctx.close();
 	}
