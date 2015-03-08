@@ -7,15 +7,13 @@
 							http://www.springframework.org/schema/beans/spring-beans.xsd
 							http://www.springframework.org/schema/context 
                         	http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<context:component-scan base-package="com.jdriven.blog.profiles.annotations"/>
-	
+
+    <!--    We use the profile attribute on the beans element to specify the profile.
+            Only the child beans are loaded on initialization if the profile is active -->
 	<beans profile="ldap">
 		<bean class="com.jdriven.blog.profiles.xml.LDAPAuthentication" />
 	</beans>
-	
 	<beans profile="saml">
 		<bean class="com.jdriven.blog.profiles.xml.SAMLAuthentication" />		
 	</beans>
-		
 </beans>
